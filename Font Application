@@ -1,0 +1,31 @@
+PublicClassForm1
+PrivateSub Label2_Leave(ByVal sender AsObject, ByVal e As System.EventArgs) Handles
+Label2.Leave
+TextBox2.Text = Len(TextBox1.Text)
+EndSub
+PrivateSub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button1.Click
+TextBox1.BackColor = Color.Pink
+TextBox1.ForeColor = Color.Blue
+TextBox2.BackColor = Color.Cyan
+TextBox2.ForeColor = Color.Black
+If TextBox1.Text = UCase(TextBox1.Text) Then
+TextBox1.Text = LCase(TextBox1.Text)
+ElseIf TextBox1.Text = LCase(TextBox1.Text) Then
+TextBox1.Text = UCase(TextBox1.Text)
+EndIf
+EndSub
+PrivateSub TextBox1_Leave(ByVal sender AsObject, ByVal e As System.EventArgs) Handles
+TextBox1.Leave
+TextBox2.Text = Len(TextBox1.Text)
+EndSub
+PrivateSub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button2.Click
+TextBox1.Text = " "
+TextBox2.Text = " "
+EndSub
+PrivateSub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button3.Click
+End
+EndSub
+EndClass
