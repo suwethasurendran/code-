@@ -1,0 +1,143 @@
+Ex.No:1 CALCULATOR USING ARITHMETIC OPERATOR  
+Code:
+PublicClassForm1
+Dim Firstnum AsDecimal
+Dim Secondnum AsDecimal
+Dim Operations AsInteger
+Dim Operator_selector AsBoolean = False
+PrivateSub Button12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button12.Click
+Firstnum = TextBox1.Text
+TextBox1.Text = " "
+Operator_selector = True
+Operations = 1'For addition
+EndSub
+PrivateSub Button13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button13.Click
+Firstnum = TextBox1.Text
+TextBox1.Text = " "
+Operator_selector = True
+Operations = 2 'For subtraction
+EndSub
+PrivateSub Button14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button14.Click
+Firstnum = TextBox1.Text
+TextBox1.Text = " "
+Operator_selector = True
+Operations = 3 'For multiplication
+EndSub
+PrivateSub Button15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button15.Click
+Firstnum = TextBox1.Text
+TextBox1.Text = " "
+Operator_selector = True
+Operations = 4 'For divide
+EndSub
+PrivateSub Button16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button16.Click
+If Operator_selector = TrueThen
+Secondnum = TextBox1.Text
+If Operations = 1 Then
+TextBox1.Text = Firstnum + Secondnum
+ElseIf Operations = 2 Then
+TextBox1.Text = Firstnum - Secondnum
+ElseIf Operations = 3 Then
+TextBox1.Text = Firstnum * Secondnum
+Else
+If Secondnum = 0 Then
+TextBox1.Text = "Error!"
+Else
+EndIf
+EndIf
+EndIf
+EndSub
+TextBox1.Text = Firstnum / Secondnum
+Operator_selector = False
+PrivateSub Button11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button11.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "."
+Else
+EndIf
+TextBox1.Text = "."
+EndSub
+PrivateSub Button10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button10.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "0"
+Else
+EndIf
+TextBox1.Text = "0"
+EndSub
+PrivateSub Button9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button9.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "9"
+Else
+EndIf
+TextBox1.Text = "9"
+EndSub
+PrivateSub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button8.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "8"
+Else
+EndIf
+TextBox1.Text = "8"
+EndSub
+PrivateSub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button7.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "7"
+Else
+EndIf
+TextBox1.Text = "7"
+EndSub
+PrivateSub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button4.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "4"
+Else
+EndIf
+TextBox1.Text = "4"
+EndSub
+PrivateSub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button5.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "5"
+Else
+EndIf
+TextBox1.Text = "5"
+EndSub
+PrivateSub Button6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button6.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "6"
+Else
+EndIf
+TextBox1.Text = "6"
+EndSub
+PrivateSub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button3.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "3"
+Else
+EndIf
+TextBox1.Text = "3"
+EndSub
+PrivateSub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button2.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "2"
+Else
+EndIf
+TextBox1.Text = "2"
+EndSub
+PrivateSub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+Button2.Click
+If TextBox1.Text <>"0"Then
+TextBox1.Text += "1"
+Else
+EndIf
+TextBox1.Text = "1"
+EndSub
