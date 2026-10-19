@@ -1,0 +1,83 @@
+PublicClassForm1
+PrivateSub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) HandlesMyBase.Load
+cmbproductid.Items.Add("pid001")
+cmbproductid.Items.Add("pid002")
+cmbproductid.Items.Add("pid003")
+cmbproductid.Items.Add("pid004")
+For d = 0 To 25 Step 5
+cmbdiscount.Items.Add(d)
+Next
+EndSub
+PrivateSub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+Handles cmbproductid.SelectedIndexChanged
+If cmbproductid.Text = "pid001"Then
+txtproductname.Text = "monitor"
+txtstocklevel.Text = "100"
+txtcost.Text = "20"
+ElseIf cmbproductid.Text = "pid002"Then
+txtproductname.Text = "keyboard"
+txtstocklevel.Text = "50"
+txtcost.Text = "25"
+ElseIf cmbproductid.Text = "pid003"Then
+txtproductname.Text = "cpu"
+txtstocklevel.Text = "80"
+txtcost.Text = "50"
+ElseIf cmbproductid.Text = "pid004"Then
+txtproductname.Text = " mouse"
+txtstocklevel.Text = "50"
+txtcost.Text = "20"
+EndIf
+EndSub
+PrivateSub txtorder_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles
+txtorder.TextChanged
+txtremainder.Text = Val(txtstocklevel.Text) - Val(txtorder.Text)
+If txtremainder.Text < 0 Then
+MessageBox.Show("limited as been reached")
+EndIf
+EndSub
+PrivateSub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+Dim itax AsDecimal
+If cmbdiscount.Text = 0 Then
+itax = ((Val(txtcost.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text))
+txttotal.Text = Val(txtsubtotal.Text) + Val(txttax.Text)
+ElseIf cmbdiscount.Text = 5 Then
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text)) - (((Val(txtcost.Text) * Val(txtorder.Text)) * 5) / 100)
+itax = ((Val(txtsubtotal.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txttotal.Text = (Val(txtsubtotal.Text) + (itax))
+ElseIf cmbdiscount.Text = 10 Then
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text)) - (((Val(txtcost.Text) * Val(txtorder.Text)) * 10) / 100)
+itax = ((Val(txtsubtotal.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txttotal.Text = (Val(txtsubtotal.Text) + (itax))
+ElseIf cmbdiscount.Text = 15 Then
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text)) - (((Val(txtcost.Text) * Val(txtorder.Text)) * 15) / 100)
+itax = ((Val(txtsubtotal.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txttotal.Text = (Val(txtsubtotal.Text) + (itax))
+ElseIf cmbdiscount.Text = 20 Then
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text)) - (((Val(txtcost.Text) * Val(txtorder.Text)) * 20) / 100)
+itax = ((Val(txtsubtotal.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txttotal.Text = (Val(txtsubtotal.Text) + (itax))
+ElseIf cmbdiscount.Text = 25 Then
+txtsubtotal.Text = (Val(txtcost.Text) * Val(txtorder.Text)) - (((Val(txtcost.Text) * Val(txtorder.Text)) * 25) / 100)
+itax = ((Val(txtsubtotal.Text) * Val(txtorder.Text) * 7.5) / 100)
+txttax.Text = itax
+txttotal.Text = (Val(txtsubtotal.Text) + (itax))
+EndIf
+txttax.Text = FormatCurrency(txttax.Text)
+txtsubtotal.Text = FormatCurrency(txtsubtotal.Text)
+txttotal.Text = FormatCurrency(txttotal.Text)
+EndSub
+PrivateSub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+txttax.Text = ""
+txtsubtotal.Text = " "
+txttotal.Text = " "
+cmbdiscount.Text = "0"
+txtorder.Text = " "
+txtremainder.Text = txtremainder.Text + txtorder.Text
+EndSub
+EndClass
