@@ -1,0 +1,58 @@
+Public Class Form1
+Private Sub NewToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles NewToolStripMenuItem.Click
+RichTextBox1.Text = " "
+End Sub
+Private Sub OpenToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles OpenToolStripMenuItem.Click
+Me.OpenFileDialog1.DefaultExt = "richtextformat/*.rtf"
+Me.OpenFileDialog1.Filter = "textfiles|*.txt|all files|*.*"
+Me.OpenFileDialog1.ShowDialog()
+Me.RichTextBox1.LoadFile(Me.OpenFileDialog1.FileName,
+RichTextBoxStreamType.PlainText)
+Me.Text = (Me.OpenFileDialog1.FileName)
+End Sub
+Private Sub SaveToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
+Me.SaveFileDialog1.DefaultExt = "richtextformat/*.rtf"
+Me.SaveFileDialog1.Filter = "textfiles|*.txt|all files|*.*"
+Me.SaveFileDialog1.ShowDialog()
+Me.RichTextBox1.SaveFile(Me.SaveFileDialog1.FileName,
+RichTextBoxStreamType.PlainText)
+Me.Text = (Me.SaveFileDialog1.FileName)
+End Sub
+Private Sub CutToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles CutToolStripMenuItem.Click
+Me.RichTextBox1.Cut()
+End Sub
+Private Sub CopyToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles CopyToolStripMenuItem.Click
+Me.RichTextBox1.Copy()
+End Sub
+Private Sub PasteToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles PasteToolStripMenuItem.Click
+Me.RichTextBox1.Paste()
+End Sub
+Private Sub UndoToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles UndoToolStripMenuItem.Click
+Me.RichTextBox1.Undo()
+End Sub
+Private Sub ExitToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
+Me.Close()
+End Sub
+Private Sub FontToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles FontToolStripMenuItem.Click
+Me.FontDialog1.ShowDialog()
+Me.RichTextBox1.Font = Me.FontDialog1.Font
+End Sub
+Private Sub ColorToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles ColorToolStripMenuItem.Click
+Me.ColorDialog1.ShowDialog()
+Me.RichTextBox1.ForeColor = (Me.ColorDialog1.Color)
+End Sub
+Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object,
+ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
+MsgBox("Developed by 3rd bsc-cs")
+End Sub
+End Class
