@@ -1,0 +1,23 @@
+PublicClassForm1
+PrivateSub Button1_Click(ByVal sender AsSystem.Object, ByVal e AsSystem.EventArgs) Handles Button1.Click
+Form2.Show()
+EndSub
+PrivateSub Button2_Click(ByVal sender AsSystem.Object, ByVal e AsSystem.EventArgs) Handles Button2.Click
+End
+EndSub
+EndClass
+‘FORM 2’
+PublicClassForm2
+PrivateSubPATIENTToolStripMenuItem_Click(ByVal sender AsSystem.Object, ByVal e AsSystem.EventArgs)
+HandlesPATIENTToolStripMenuItem.Click
+Form3.Show()
+EndSub
+PrivateSubDOCTORToolStripMenuItem_Click(ByVal sender AsSystem.Object, ByVal e AsSystem.EventArgs)
+HandlesDOCTORToolStripMenuItem.Click
+Form4.Show()
+EndSub
+PrivateSubEXITToolStripMenuItem_Click(ByVal sender AsSystem.Object, ByVal e AsSystem.EventArgs)
+HandlesEXITToolStripMenuItem.Click
+End
+EndSub
+EndClass
